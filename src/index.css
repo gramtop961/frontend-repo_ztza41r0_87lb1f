@@ -10,19 +10,23 @@
     --font-mona: 'Mona Sans', system-ui, sans-serif;
     --font-ibm-plex: 'IBM Plex Sans', system-ui, sans-serif;
     --font-manrope: 'Manrope', system-ui, sans-serif;
+    --neon: #10b981; /* emerald neon */
   }
 
   html {
     font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
+    background: #000;
   }
 
   body {
     @apply antialiased;
+    background: #000;
+    color: #fff;
   }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
+/* Custom utilities for neon theme and animations */
 @layer utilities {
   .animate-in {
     animation-name: animateIn;
@@ -43,4 +47,16 @@
     --tw-exit-translate-x: initial;
     --tw-exit-translate-y: initial;
   }
+
+  /* Neon color helpers used throughout components */
+  .text-neon { color: var(--neon); }
+  .bg-neon { background-color: var(--neon); }
+  .border-neon { border-color: var(--neon); }
+
+  /* Opacity variants (escaped slashes match class names used in JSX) */
+  .text-neon\/70 { color: rgba(16,185,129,0.70); }
+  .text-neon\/90 { color: rgba(16,185,129,0.90); }
+  .border-neon\/30 { border-color: rgba(16,185,129,0.30); }
+  .border-neon\/40 { border-color: rgba(16,185,129,0.40); }
+  .border-neon\/50 { border-color: rgba(16,185,129,0.50); }
 }
